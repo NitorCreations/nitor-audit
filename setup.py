@@ -15,7 +15,7 @@ import sys
 from setuptools import setup
 
 setup(name='nitor-audit',
-      version='0.1.0',
+      version='0.1.1',
       description='Tools for uploading security audit logs to a centralized sftp server',
       url='http://github.com/NitorCreations/nitor-audit',
       download_url='https://github.com/NitorCreations/nitor-audit/tarball/0.1',
