@@ -32,6 +32,7 @@ SUDO_EXEC = \
   chmod 700 /root/.ssh && \\
   cp {} /root/.ssh/nitor-audit && \\
   chown -R root:root /root/.ssh/ && \\
+  gpg --receive-keys {}  && \\
   cp {} /etc/cron.d/nitor-audit
 """
 @contextlib.contextmanager
@@ -119,7 +120,7 @@ def init():
     fh, crontab_file = mkstemp()
     with open(crontab_file, "w") as crontab:
         crontab.write(CRONTAB.format(user, ssh_server, gpg_key))
-    proc = Popen(["sudo", "sh", "-c", SUDO_EXEC.format(key_file, crontab_file)])
+    proc = Popen(["sudo", "sh", "-c", SUDO_EXEC.format(key_file, gpg_key, crontab_file)])
     _, _ = proc.communicate()
     if unlink_key:
         os.unlink(key_file)
