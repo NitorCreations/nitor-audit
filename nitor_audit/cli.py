@@ -24,7 +24,7 @@ CRONTAB = \
 """SHELL=/bin/bash
 PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
 MAILTO=root
-*/2 * * * * root /root/audit.sh \"{}\" \"{}\" \"{}\" >> /var/log/nitor-audit.log 2>&1
+*/2 * * * * root audit.sh \"{}\" \"{}\" \"{}\" >> /var/log/nitor-audit.log 2>&1
 """
 
 SUDO_EXEC = \
