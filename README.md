@@ -5,6 +5,6 @@ uploaded to a central server. Requires an sftp server and rest endpoint that rec
 authenticated users and creates sftp access for a ssh public key.
 
 ## Init
-Init flow is the followng:
+Init flow is the following:
 
 ![init flow](nitor-audit-init-flow.png)
